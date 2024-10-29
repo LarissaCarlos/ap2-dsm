@@ -15,8 +15,8 @@ class DogCard extends StatelessWidget {
           Row(
             children: [
               SizedBox(
-                height: 150,
-                width: 150,
+                height: 100,
+                width: 100,
                 child: Image.network(
                   dog.imageUrl,
                   fit: BoxFit.cover,
@@ -54,10 +54,15 @@ class DogCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 16),
-              Text(
-                dog.name,
-                style:
-                    const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              Flexible(
+                child: Text(
+                  dog.name,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ],
           ),
